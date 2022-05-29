@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\bookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource('buku', 'App\Http\Controllers\bookController');
+Route::get('/delete/{id}', [bookController::class, 'delete'])->name('delete');
