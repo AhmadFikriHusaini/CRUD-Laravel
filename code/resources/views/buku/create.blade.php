@@ -11,7 +11,7 @@
                             <h5 class="card-title">Tambahkan Buku!</h5>
                         </div>
                         <div class="float-end">
-                            <a class="btn btn-success" href="{{ route('buku.index') }}"> Back</a>
+                            <a class="btn btn-success" href="{{ route('buku.index') }}"><i class="bi bi-arrow-left"></i></a>
                         </div>
                     </div>
                 </div>
@@ -63,8 +63,8 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-danger">Reset</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Submit</button>
+                            <button type="reset" class="btn btn-danger"><i class="bi bi-x-circle"></i> Reset</button>
                         </div>
                     </div>
                 </form>

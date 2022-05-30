@@ -19,9 +19,9 @@ class bookController extends Controller
             $buku = buku::where('judul', 'LIKE', '%' . $request->cari . '%')
             ->orWhere('penulis', 'LIKE', '%' . $request->cari . '%')->
             orWhere('penerbit', 'LIKE', '%' . $request->cari . '%')->
-            orWhere('tahun_terbit', 'LIKE', '%' . $request->cari . '%')->paginate(5);
+            orWhere('tahun_terbit', 'LIKE', '%' . $request->cari . '%')->paginate(2);
         } else {
-            $buku = buku::latest()->paginate(5);
+            $buku = buku::latest()->paginate(2);
         }
         return view('buku.index', compact('buku'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -117,7 +117,7 @@ class bookController extends Controller
                 File::delete('image/'.$request->oldCover);
             };
             $destination = 'image/';
-            $imagename = date('YmdHis') . "-" . $image->getClientOriginalName() . "." . $image->getClientOriginalExtension();
+            $imagename = date('YmdHis') . "-" . $image->getClientOriginalName();
             $image->move($destination, $imagename);
             $input['cover'] = "$imagename";
         } else {
